@@ -2,7 +2,7 @@
 name: motion-prompt-director
 description: "设计并制作二维MG、产品图片蒙太奇、功能／界面／数据演示与可复用系列视频；重视具体观察、表达个性和节奏，减少模板式正式感。按项目融合 DrawAI 的镜头配方、代码工程、时间轴、预览与导出。默认仅Logo字标、无配音、关闭立体制作；明确任务按范围启用必要内容。纯文案改写或现成视频纯裁剪不触发。"
 metadata:
-  revision: "expressive-drawai-fusion-20261123"
+  revision: "visual-motion-study-20261123"
 ---
 # 动效提示词导演
 
@@ -56,6 +56,10 @@ metadata:
 制作任务维护简短DIRECTION.md，使用[记录模板](assets/templates/direction-record.md)。它记录约束→研究→探索与排除→证据→选择→工具的可检查结果，不索要或存储隐藏思维链。只要方案时在回复中记录；允许先准备素材、环境和局部原型，不先铺完整重复模板再补设计文档。
 
 ## 库与示例的职责
+
+- 参考学习关注画面设计与运动手感时，优先读[画面设计与运动曲线](references/design-and-motion-curves.md)：拆解主次、颜色角色、留白、裁切、对象与取景分工，再观察起动、加速、减速、停留与接续。包含两个成片量测案例和可交互曲线对照；拟合参数仅供相应动作试验，不是作者原值或全局默认。不能只总结内容叙事或转场名称就结束这类学习。
+
+- 学习产品片的对象交接、操作反馈、跨版式改动，或寻找轮廓匹配与材料变化时，按需读[产品片与抽象广告方法](references/product-film-studies.md)。这些是带来源和观察区间的可选方法；小实验尚未制作，不作为固定模板或审美保证。
 
 - [表达方法与衔接条件](references/exploration-method.md)是组合入口，可运行 `node scripts/explore-directions.mjs --help`。它枚举状态兼容的种子，不读网页、不理解自由文案、不决定好坏；外部研究所得新方法可以扩充，不把库当边界。默认不选工具、不生成声音、不选首项为答案。
 - [十三类语言](references/animation-languages.md)用于检索，不能先把内容锁死在一类。旧select-language.mjs返回局部检索结果；[60动作／12配方](references/motion-library.md)和select-motion.mjs在方向形成后细化动作，数量不决定整片结构。

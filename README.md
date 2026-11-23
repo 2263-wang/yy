@@ -13,6 +13,7 @@
 | 产品功能、界面、数据演示 | 真实功能与数据、操作反馈、场景组件、时间轴和音轨 |
 | 经常改文案、数据、配色的系列视频 | 分离内容、主题、场景与排期，复用组件并分版本交付 |
 | 有明确参考风格的短 MG | 检索镜头卡、阅读配方和源码，先打样再按内容改造 |
+| 学习参考片的画面与运动 | 拆解构图、色彩、留白与裁切；观察起停、快慢和分段，区分量测与拟合 |
 | 无说明文字的二维图形叙事 | 可见事件、对象行为、焦点交接与段落发展 |
 | 产品图片快切、拼贴、品牌过场 | 真实素材、裁切、匹配线索、快慢变化与逐镜输出 |
 
@@ -59,6 +60,9 @@
 
 - [SKILL.md](skills/motion-prompt-director/SKILL.md)：主要设计与制作流程。
 - [表达个性与小实验](skills/motion-prompt-director/references/expressive-direction.md)：语气、对象行为、节奏与有意的不规则。
+- [画面设计与运动曲线](skills/motion-prompt-director/references/design-and-motion-curves.md)：4 组画面观察、2 个原生帧量测案例，以及带误差说明的曲线近似。
+- [产品片与抽象广告方法](skills/motion-prompt-director/references/product-film-studies.md)：8 张带观察区间、迁移方式和失效信号的方法卡。
+- [曲线对照页](skills/motion-prompt-director/references/curve-studies/curve-lab.html)：下载后在浏览器打开，可拖动比较量测进度、拟合与线性动作；GitHub 文件页显示源码。
 - [DrawAI 制作与复用](skills/motion-prompt-director/references/drawai-production.md)：配方、工程组织、改版、预览和交付。
 - [设计记录模板](skills/motion-prompt-director/assets/templates/direction-record.md)：项目中的简短设计与制作记录。
 - `scripts/`：已有的方法检索与工程检查工具。
@@ -66,6 +70,8 @@
 
 ## 验证与来源
 
-当前修订：`expressive-drawai-fusion-20261123`。已检查 Skill 格式、本次修改的引用与 DrawAI 的环境和配方查询；本机此前完成过 4 秒二维音视频的渲染、技术质检和逐镜素材导出。其他机器需要自行验证环境，这些检查不证明所有风格、审美效果、透明格式或剪映草稿导入都已通过。
+当前修订：`visual-motion-study-20261123`。新增参考片的画面设计与运动研究：第一轮观察8支影片，第二轮对两个片段按24/30fps量测，共42/43帧，并对所选动作区间拟合曲线。拟合是屏幕空间近似，未取得作者原始工程，不是全局默认曲线；正常速度完整回看、音轨和新动画审美尚未验证。原片与参考抽帧未随仓库分发，仓库保留自行制作的量测图和数值。
+
+已检查 Skill 格式与引用；此前还检查过 DrawAI 的环境和配方查询，本机完成过4秒二维音视频渲染、技术质检与逐镜导出。其他机器需要自行验证环境，这些检查不证明所有风格、透明格式或剪映草稿导入都已通过。
 
 这是个人整理与演进的技能，不是参考视频作者的原版 Skill，也不是 DrawAI 官方发行包。历史参考和观察边界保留在 [来源说明](skills/motion-prompt-director/references/provenance.md) 中。第三方项目及参考素材的权利归各自权利人，具体使用遵循其原有许可与来源说明；本仓库不对第三方材料另行授予许可。
