@@ -1,4 +1,6 @@
-# 动效提示词导演 · DrawAI 融合版
+# 动画skill
+
+动效提示词导演 · DrawAI 融合版
 
 面向 Codex 的中文动画制作 Skill：从内容、素材和对象行为出发设计二维动画，按项目融合 DrawAI 的镜头配方、可复用工程、时间轴、预览与导出。
 
@@ -18,7 +20,7 @@
 
 把下面这句话发给 Codex：
 
-> 请将 https://github.com/2263-wang/yy 仓库里的 skills/motion-prompt-director 安装到我的 Codex 技能目录。保留该技能的默认约束，检查文件结构和引用是否完整。
+> 请将 https://github.com/2263-wang/animation-skill 仓库里的 skills/motion-prompt-director 安装到我的 Codex 技能目录。保留该技能的默认约束，检查文件结构和引用是否完整。
 
 也可以手动把 `skills/motion-prompt-director` 整个文件夹复制到 Codex 技能目录，通常是 `~/.codex/skills/`；设置了 `CODEX_HOME` 时使用其下的 `skills/`。保持目录中的脚本、参考文档和素材完整，不只复制 `SKILL.md`。
 
