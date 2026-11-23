@@ -1,0 +1,924 @@
+{
+  "schemaVersion": 1,
+  "scope": "Open flat-2D methods including purposeful photo montage; synthetic/CSS 3D excluded in current user scope. State compatibility is not visual proof.",
+  "methods": [
+    {
+      "id": "world-camera",
+      "name": "大平面世界与取景移动",
+      "relations": [
+        "dependency",
+        "spatial",
+        "hierarchy",
+        "part-whole"
+      ],
+      "conditions": [
+        "关系需要有依据，画布与取景框分离",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "勿变成目录停站；坐标不冒充真实地理",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "animated system diagram camera overview detail",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "整体参照先建立",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "从相关局部揭示世界",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "沿关系移动取景，保留回看参照",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "局部与整体交替，揭示关系",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "evolving-map",
+      "name": "同图谱改变观看职责",
+      "relations": [
+        "dependency",
+        "hierarchy",
+        "network",
+        "comparison"
+      ],
+      "conditions": [
+        "节点身份与连接语义明确",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "不能用明暗或尺寸无依据暗示国家能力差距",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "animated infographic focus relationship transformation",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "整体关系场显现",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "一处关系带出全图",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "固定参照中由连接接管焦点",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "局部变化后让整体重获解释作用",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "object-assembly",
+      "name": "对象组装与展开",
+      "relations": [
+        "part-whole",
+        "dependency",
+        "mechanism"
+      ],
+      "conditions": [
+        "需要部件／整体依据或清楚的抽象隐喻",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "品牌依赖不等于Logo真实位于芯片内部",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "flat vector cutout assembly graphic sequence",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "部件分别建立身份",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "完整对象显现后展开",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "部件组合产生整体变化",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "整体展开揭示支撑部分",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "signal-trace",
+      "name": "沿对象或信号追踪",
+      "relations": [
+        "sequence",
+        "causality",
+        "network",
+        "mechanism"
+      ],
+      "conditions": [
+        "真实过程可支持先后与因果",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "产业制造与推理运行不同，不能编成同一条真实请求",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "explainer signal flow animation cause response",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "建立传播主体",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "一次触发引出主体",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "沿路径传递并逐个产生响应",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "跟随对象进入下一环节",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "state-morph",
+      "name": "同一对象的状态变化",
+      "relations": [
+        "state",
+        "identity",
+        "mechanism"
+      ],
+      "conditions": [
+        "具备分层／几何或可靠遮罩能力",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "整图漂浮不算内部变形；不能随意变成另一品牌",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "object state transition motion design continuity",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "稳定初态建立身份",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "轮廓揭示对象初态",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "保持身份展开新状态",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "对象变化并把焦点交还自身",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "paired-interaction",
+      "name": "并列对象交互",
+      "relations": [
+        "comparison",
+        "parallel",
+        "causality"
+      ],
+      "conditions": [
+        "比较维度相同且差异有依据",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "位置大小时长不能暗示无来源排名",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "motion design two objects interaction comparison",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "建立同等分量对象",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "共同触发带出双方",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "双方围绕同一条件响应",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "相互作用后重建并列关系",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "cutaway-scale",
+      "name": "平面局部与尺度揭示",
+      "relations": [
+        "part-whole",
+        "hierarchy",
+        "mechanism"
+      ],
+      "conditions": [
+        "需要真实结构素材或标明抽象编排",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "局部来自真实图片或明确抽象图形，不伪造实体剖面与内部结构",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "flat cutout detail crop scale match animation",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "轮廓与整体尺度建立",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "一个可识别细节带出整体",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "沿真实结构进入内部细节",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "尺度变换揭示新的层次",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "collage-match",
+      "name": "拼贴与形状接力",
+      "relations": [
+        "identity",
+        "sequence",
+        "parallel",
+        "spatial"
+      ],
+      "conditions": [
+        "具有可匹配形状和稳定身份",
+        "当前用真实图片／二维矢量、裁切与平面关系实现，不重建立体机身或透视"
+      ],
+      "risk": "匹配只是视觉衔接，不自动证明内容因果",
+      "source": "self-authored-seed: not an observed external film",
+      "query": "2D photo collage match cut visual storytelling",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "素材轮廓成为入口",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "一处形状建立视觉线索",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "轮廓或方向匹配交接对象",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "前景关系变化揭示下一对象",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ],
+      "rendering": "flat-2d"
+    },
+    {
+      "id": "image-montage",
+      "name": "产品图片节奏蒙太奇",
+      "rendering": "flat-2d",
+      "relations": [
+        "product",
+        "collection",
+        "history",
+        "sequence",
+        "identity"
+      ],
+      "conditions": [
+        "真实图片、型号与顺序核对；图片快切不自动宣称逐年历史"
+      ],
+      "risk": "随机等时换图、底色跳变和没有识别停留会造成素材堆砌",
+      "source": "self-authored-seed from user discussion; not an observed external film",
+      "query": "2D product photo montage rapid image sequence match cut",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "首张真实产品建立视觉锚点",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "局部裁切先建立匹配线索",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "依据内容以变速快切累积，集中到品牌或主角",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "用形状／位置匹配串起图片，再以停留收束",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand-product-handoff",
+      "name": "品牌图标到产品的平面交接",
+      "rendering": "flat-2d",
+      "relations": [
+        "product",
+        "identity",
+        "state",
+        "collection"
+      ],
+      "conditions": [
+        "核对真实Logo／产品图；名称只在用户明确要求时显示"
+      ],
+      "risk": "不将Logo挤压或转成假产品；不默认每题都用苹果标志",
+      "source": "self-authored-seed from user discussion; not an observed external film",
+      "query": "2D logo pop product image reveal graphic transition",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "Logo以二维缩放弹出建立焦点",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "产品轮廓或图片锚点引出Logo",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "Logo让位给真实产品图，图形关系继承",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "平面遮罩接力揭示产品，获准时仅显示产品名",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flat-footage-bridge",
+      "name": "前后画面的二维视窗衔接",
+      "rendering": "flat-2d",
+      "relations": [
+        "bridge",
+        "sequence",
+        "identity",
+        "spatial"
+      ],
+      "conditions": [
+        "先明确口播位置与四个接点；没有真实源片标代理和未验证"
+      ],
+      "risk": "白场、黑场和推近不能自动证明已接好正文",
+      "source": "self-authored-seed from user discussion; not an observed external film",
+      "query": "2D screen window footage handoff match cut transition",
+      "entries": [
+        {
+          "id": "establish",
+          "description": "前段实际画面形成平面视窗",
+          "from": "start",
+          "to": "ready"
+        },
+        {
+          "id": "reveal",
+          "description": "已有画面通过裁切成为构图锚点",
+          "from": "start",
+          "to": "ready"
+        }
+      ],
+      "middles": [
+        {
+          "id": "develop",
+          "description": "视窗／遮罩交接到正文画面，保留匹配依据",
+          "from": "ready",
+          "to": "changed"
+        },
+        {
+          "id": "reframe",
+          "description": "平面取景从素材群进入正文，正文逐渐接管全帧",
+          "from": "ready",
+          "to": "changed"
+        }
+      ],
+      "exits": [
+        {
+          "id": "hold",
+          "description": "保留变化后的关系，交给后文或适当停留",
+          "from": "changed",
+          "to": "held",
+          "modes": [
+            "insert"
+          ]
+        },
+        {
+          "id": "clear",
+          "description": "沿继承关系退出，在末帧前完全透明",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "overlay"
+          ]
+        },
+        {
+          "id": "return",
+          "description": "首帧已具可识别主体，接回实际初态与速度；独立入场不混入循环周期",
+          "from": "changed",
+          "to": "start",
+          "modes": [
+            "loop"
+          ]
+        },
+        {
+          "id": "cover-clear",
+          "description": "承接前景遮挡，覆盖切点后退出至透明；须另验全画幅覆盖",
+          "from": "changed",
+          "to": "clear",
+          "modes": [
+            "transition"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "example-paper-world",
+  "version": "1.0.0",
+  "private": true,
+  "description": "世界画布 + 摄像机路线结构的最小完整实例（对应 references/world-and-camera.md）",
+  "scripts": {
+    "studio": "remotion studio src/index.js",
+    "render": "remotion render src/index.js PaperWorld out/paper-world.mp4",
+    "audit": "node src/audit-rhythm.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.290",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.290"
+  },
+  "type": "module"
+}

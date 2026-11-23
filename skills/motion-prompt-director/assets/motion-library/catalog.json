@@ -1,0 +1,1686 @@
+{
+  "schemaVersion": 1,
+  "kind": "motion prompt catalog; not 60 executable components",
+  "actions": [
+    {
+      "id": "E01",
+      "category": "entry",
+      "name": "托起显现",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "终态下方约主体高度的8%，alpha0",
+      "action": "从终点下方短距离抬起，透明度先建立，位置缓慢坐实",
+      "endState": "主体归位，alpha1",
+      "pitfall": "长距离上飞会抢走主体内容",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E01「托起显现」。起态：终态下方约主体高度的8%，alpha0。动作：从终点下方短距离抬起，透明度先建立，位置缓慢坐实。终态：主体归位，alpha1。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：长距离上飞会抢走主体内容。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E02",
+      "category": "entry",
+      "name": "沿轴滑入",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "可见框侧外，alpha0",
+      "action": "沿构图主轴滑入，先快后慢，保持尺寸",
+      "endState": "终态坐标与尺寸",
+      "pitfall": "不要无依据给每个元素不同方向",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E02「沿轴滑入」。起态：可见框侧外，alpha0。动作：沿构图主轴滑入，先快后慢，保持尺寸。终态：终态坐标与尺寸。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不要无依据给每个元素不同方向。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E03",
+      "category": "entry",
+      "name": "平面缩放靠近",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "scale0.88，alpha0",
+      "action": "从较小比例接近最终大小，停在清晰可读状态",
+      "endState": "scale1，alpha1",
+      "pitfall": "只用二维scale，不加透视、translateZ或材质灯光",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E03「平面缩放靠近」。起态：scale0.88，alpha0。动作：从较小比例接近最终大小，停在清晰可读状态。终态：scale1，alpha1。按当前内容与时长验证锚点、边界、速度和透明度。注意：只用二维scale，不加透视、translateZ或材质灯光。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E04",
+      "category": "entry",
+      "name": "遮罩揭示",
+      "primitives": [
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "完整主体被遮罩隐藏",
+      "action": "主体位置不动，由同方向遮罩揭开",
+      "endState": "主体完整可见",
+      "pitfall": "文字和底板应共用遮罩",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E04「遮罩揭示」。起态：完整主体被遮罩隐藏。动作：主体位置不动，由同方向遮罩揭开。终态：主体完整可见。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：文字和底板应共用遮罩。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E05",
+      "category": "entry",
+      "name": "浅弧落位",
+      "primitives": [
+        "PathMove"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "起点与终点已确定",
+      "action": "沿轻微弧线抵达格位，保持对象身份",
+      "endState": "目标格位",
+      "pitfall": "弧度只为路径服务，不强制绕圈",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E05「浅弧落位」。起态：起点与终点已确定。动作：沿轻微弧线抵达格位，保持对象身份。终态：目标格位。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：弧度只为路径服务，不强制绕圈。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E06",
+      "category": "entry",
+      "name": "平面旋正入场",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "小倾角，alpha0",
+      "action": "从轻微rotateZ回到平面终态角度，位置同步收稳",
+      "endState": "终态倾角",
+      "pitfall": "只用平面旋转，不用rotateX/Y或透视",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E06「平面旋正入场」。起态：小倾角，alpha0。动作：从轻微rotateZ回到平面终态角度，位置同步收稳。终态：终态倾角。按当前内容与时长验证锚点、边界、速度和透明度。注意：只用平面旋转，不用rotateX/Y或透视。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E07",
+      "category": "entry",
+      "name": "弹性坐实",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "终点附近的起点",
+      "action": "短距离进场，轻微越过目标后归位",
+      "endState": "精确终态",
+      "pitfall": "默认小回弹，不对所有材质使用",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E07「弹性坐实」。起态：终点附近的起点。动作：短距离进场，轻微越过目标后归位。终态：精确终态。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：默认小回弹，不对所有材质使用。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "E08",
+      "category": "entry",
+      "name": "重力落下",
+      "primitives": [
+        "PathMove"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "主体上方起点",
+      "action": "沿下落方向加速，落地后短暂恢复",
+      "endState": "落点与基线",
+      "pitfall": "后续动作的力方向要衔接",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E08「重力落下」。起态：主体上方起点。动作：沿下落方向加速，落地后短暂恢复。终态：落点与基线。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：后续动作的力方向要衔接。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E09",
+      "category": "entry",
+      "name": "压缩后展开",
+      "primitives": [
+        "ShapeMorph"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "轻压缩的可变形图形",
+      "action": "从略扁的形态恢复到完整轮廓",
+      "endState": "原始比例",
+      "pitfall": "商标和人物整图通常不做明显变形",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E09「压缩后展开」。起态：轻压缩的可变形图形。动作：从略扁的形态恢复到完整轮廓。终态：原始比例。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：商标和人物整图通常不做明显变形。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "E10",
+      "category": "entry",
+      "name": "光标引入",
+      "primitives": [
+        "PathMove",
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "光标与目标坐标已知",
+      "action": "光标先到达目标，再触发主体揭示",
+      "endState": "目标显现，光标退让",
+      "pitfall": "触发点必须贴住真实目标",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 E10「光标引入」。起态：光标与目标坐标已知。动作：光标先到达目标，再触发主体揭示。终态：目标显现，光标退让。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：触发点必须贴住真实目标。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L01",
+      "category": "layout",
+      "name": "叠摞展开成网格",
+      "primitives": [
+        "Motion",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "可辨识的一叠",
+      "action": "保留叠放身份，卡片按目标距离错峰落入网格",
+      "endState": "有主次留白的网格",
+      "pitfall": "不能退场后替换另一套静图",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L01「叠摞展开成网格」。起态：可辨识的一叠。动作：保留叠放身份，卡片按目标距离错峰落入网格。终态：有主次留白的网格。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能退场后替换另一套静图。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L02",
+      "category": "layout",
+      "name": "扇面展开",
+      "primitives": [
+        "Motion",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "重叠卡片",
+      "action": "围绕共同锚点展开为浅扇面",
+      "endState": "浅扇面",
+      "pitfall": "用户要规整比较时不要用扇面",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L02「扇面展开」。起态：重叠卡片。动作：围绕共同锚点展开为浅扇面。终态：浅扇面。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：用户要规整比较时不要用扇面。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L03",
+      "category": "layout",
+      "name": "环形集结",
+      "primitives": [
+        "OrbitGroup",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "分散或叠放的对象",
+      "action": "对象沿共同轨道形成环形，随后收稳",
+      "endState": "环形排列",
+      "pitfall": "保持图标朝向与可读性",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L03「环形集结」。起态：分散或叠放的对象。动作：对象沿共同轨道形成环形，随后收稳。终态：环形排列。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：保持图标朝向与可读性。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L04",
+      "category": "layout",
+      "name": "轮播交接",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "焦点对象和候选对象",
+      "action": "当前焦点退到侧面，下一对象接到焦点",
+      "endState": "下一对象成为焦点",
+      "pitfall": "不要每轮切断对象身份",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L04「轮播交接」。起态：焦点对象和候选对象。动作：当前焦点退到侧面，下一对象接到焦点。终态：下一对象成为焦点。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不要每轮切断对象身份。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L05",
+      "category": "layout",
+      "name": "连续换位",
+      "primitives": [
+        "PathMove"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "完整旧布局",
+      "action": "对象沿互不遮脸的路径交换格位",
+      "endState": "完整新布局",
+      "pitfall": "名字、头像与数据始终绑定",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L05「连续换位」。起态：完整旧布局。动作：对象沿互不遮脸的路径交换格位。终态：完整新布局。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：名字、头像与数据始终绑定。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L06",
+      "category": "layout",
+      "name": "收拢成摞",
+      "primitives": [
+        "Motion",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "展开的多个对象",
+      "action": "按层序收回中心，留小偏移显示数量",
+      "endState": "可辨识的叠摞",
+      "pitfall": "不能完全压成一张看不出数量",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L06「收拢成摞」。起态：展开的多个对象。动作：按层序收回中心，留小偏移显示数量。终态：可辨识的叠摞。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能完全压成一张看不出数量。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L07",
+      "category": "layout",
+      "name": "中心向外分发",
+      "primitives": [
+        "PathMove",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "中心来源或公共对象",
+      "action": "围绕公共来源向目标位置分发",
+      "endState": "有关系的分布",
+      "pitfall": "不要把分发做成无目的爆炸",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L07「中心向外分发」。起态：中心来源或公共对象。动作：围绕公共来源向目标位置分发。终态：有关系的分布。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不要把分发做成无目的爆炸。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L08",
+      "category": "layout",
+      "name": "基线对齐",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "有意错落的构图",
+      "action": "将散落对象归到共同基线与间距",
+      "endState": "并列或对照构图",
+      "pitfall": "统一视觉大小，不只统一像素高度",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L08「基线对齐」。起态：有意错落的构图。动作：将散落对象归到共同基线与间距。终态：并列或对照构图。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：统一视觉大小，不只统一像素高度。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "L09",
+      "category": "layout",
+      "name": "连接关系建立",
+      "primitives": [
+        "ClipReveal"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "节点可读，连线隐藏",
+      "action": "先稳定节点，再逐段画出连接",
+      "endState": "关系图完整",
+      "pitfall": "线条不能先于节点造成混淆",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L09「连接关系建立」。起态：节点可读，连线隐藏。动作：先稳定节点，再逐段画出连接。终态：关系图完整。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：线条不能先于节点造成混淆。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "L10",
+      "category": "layout",
+      "name": "逐层抽离",
+      "primitives": [
+        "Motion",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.4,
+        1.0
+      ],
+      "startState": "核心被遮挡",
+      "action": "从一叠中依次抽走遮挡物，露出核心对象",
+      "endState": "核心显露",
+      "pitfall": "抽离对象不要残留在后续取景中",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 L10「逐层抽离」。起态：核心被遮挡。动作：从一叠中依次抽走遮挡物，露出核心对象。终态：核心显露。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：抽离对象不要残留在后续取景中。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "F01",
+      "category": "focus",
+      "name": "主角前移",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "多个对象共存",
+      "action": "用二维位置与大小强调主角，其他对象让位；不做深度前移",
+      "endState": "清楚的主次",
+      "pitfall": "用户要求并列时先确认是否允许主次",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F01「主角前移」。起态：多个对象共存。动作：用二维位置与大小强调主角，其他对象让位；不做深度前移。终态：清楚的主次。按当前内容与时长验证锚点、边界、速度和透明度。注意：用户要求并列时先确认是否允许主次。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "F02",
+      "category": "focus",
+      "name": "局部聚光",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "主体均可见",
+      "action": "保持主体稳定，局部光与其他对象对比发生变化",
+      "endState": "目标成为焦点",
+      "pitfall": "不要把遮暗层压在主角上",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F02「局部聚光」。起态：主体均可见。动作：保持主体稳定，局部光与其他对象对比发生变化。终态：目标成为焦点。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不要把遮暗层压在主角上。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "F03",
+      "category": "focus",
+      "name": "降调让位",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "多元素竞争",
+      "action": "次要内容轻微降低对比，主体保持清楚",
+      "endState": "注意力集中",
+      "pitfall": "不能把需要读取的数据压到看不清",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F03「降调让位」。起态：多元素竞争。动作：次要内容轻微降低对比，主体保持清楚。终态：注意力集中。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能把需要读取的数据压到看不清。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "F04",
+      "category": "focus",
+      "name": "镜头推向目标",
+      "primitives": [
+        "Camera2D"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "完整空间",
+      "action": "摄像机推进到已存在的目标",
+      "endState": "目标在安全区内",
+      "pitfall": "先检查推近是否真的带来细节或层级变化",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F04「镜头推向目标」。起态：完整空间。动作：摄像机推进到已存在的目标。终态：目标在安全区内。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：先检查推近是否真的带来细节或层级变化。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "F05",
+      "category": "focus",
+      "name": "局部细节揭示",
+      "primitives": [
+        "ClipReveal",
+        "Camera2D"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "整体可识别",
+      "action": "从整体构图接入局部细节，并保留位置线索",
+      "endState": "局部可读",
+      "pitfall": "不要裁掉关键文字或失去空间定位",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F05「局部细节揭示」。起态：整体可识别。动作：从整体构图接入局部细节，并保留位置线索。终态：局部可读。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不要裁掉关键文字或失去空间定位。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "F06",
+      "category": "focus",
+      "name": "标注依附主体",
+      "primitives": [
+        "Motion",
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "主体稳定",
+      "action": "主体到位后出现跟随标注",
+      "endState": "标注与对象对应",
+      "pitfall": "标注锚点必须从主体状态推导",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F06「标注依附主体」。起态：主体稳定。动作：主体到位后出现跟随标注。终态：标注与对象对应。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：标注锚点必须从主体状态推导。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "F07",
+      "category": "focus",
+      "name": "并列比较",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "两个对象完整",
+      "action": "两个对象来到相同视觉层级，差异区域被强调",
+      "endState": "可比较的并列终态",
+      "pitfall": "不能随意改变数据比例制造结论",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F07「并列比较」。起态：两个对象完整。动作：两个对象来到相同视觉层级，差异区域被强调。终态：可比较的并列终态。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能随意改变数据比例制造结论。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "F08",
+      "category": "focus",
+      "name": "焦点轮换",
+      "primitives": [
+        "Motion",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.35,
+        0.9
+      ],
+      "startState": "稳定群体",
+      "action": "按阅读顺序短暂强调对象，再交给下一个",
+      "endState": "每个对象获得一次关注",
+      "pitfall": "轮换表示介绍顺序，不暗示排名",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 F08「焦点轮换」。起态：稳定群体。动作：按阅读顺序短暂强调对象，再交给下一个。终态：每个对象获得一次关注。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：轮换表示介绍顺序，不暗示排名。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T01",
+      "category": "transition",
+      "name": "轮廓继承",
+      "primitives": [
+        "ShapeMorph"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "可变形的旧容器",
+      "action": "上一对象轮廓变成下一对象的容器，再出现新内容",
+      "endState": "新容器与内容",
+      "pitfall": "形状拓扑不兼容时用遮罩衔接",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T01「轮廓继承」。起态：可变形的旧容器。动作：上一对象轮廓变成下一对象的容器，再出现新内容。终态：新容器与内容。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：形状拓扑不兼容时用遮罩衔接。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T02",
+      "category": "transition",
+      "name": "方向匹配交接",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "前构图动作尾部",
+      "action": "前景与下一构图沿一致方向交接",
+      "endState": "后构图动作起部",
+      "pitfall": "检查两侧速度与位置，不只匹配方向",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T02「方向匹配交接」。起态：前构图动作尾部。动作：前景与下一构图沿一致方向交接。终态：后构图动作起部。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：检查两侧速度与位置，不只匹配方向。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T03",
+      "category": "transition",
+      "name": "圆形遮罩扩张",
+      "primitives": [
+        "ShapeMorph"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "圆形锚点",
+      "action": "由场景中的圆扩张覆盖取景框，再露出下一构图",
+      "endState": "新构图可读",
+      "pitfall": "圆必须真正覆盖四角",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T03「圆形遮罩扩张」。起态：圆形锚点。动作：由场景中的圆扩张覆盖取景框，再露出下一构图。终态：新构图可读。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：圆必须真正覆盖四角。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T04",
+      "category": "transition",
+      "name": "单向遮罩扫过",
+      "primitives": [
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "前构图可见",
+      "action": "遮罩沿一个方向完成内容交接",
+      "endState": "后构图可见",
+      "pitfall": "不能在中段同时露出两套难读内容",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T04「单向遮罩扫过」。起态：前构图可见。动作：遮罩沿一个方向完成内容交接。终态：后构图可见。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能在中段同时露出两套难读内容。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T05",
+      "category": "transition",
+      "name": "前景遮挡切换",
+      "primitives": [
+        "PathMove"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "前景在取景外",
+      "action": "大前景经过镜头，遮挡时完成内容切换",
+      "endState": "新构图，前景离开",
+      "pitfall": "遮挡窗口须覆盖切点",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T05「前景遮挡切换」。起态：前景在取景外。动作：大前景经过镜头，遮挡时完成内容切换。终态：新构图，前景离开。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：遮挡窗口须覆盖切点。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T06",
+      "category": "transition",
+      "name": "同空间移镜",
+      "primitives": [
+        "Camera2D"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "前站点完整",
+      "action": "摄像机沿同一世界移向下一个内容站点",
+      "endState": "后站点完整",
+      "pitfall": "取景中点不能无意扫到大段空白",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T06「同空间移镜」。起态：前站点完整。动作：摄像机沿同一世界移向下一个内容站点。终态：后站点完整。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：取景中点不能无意扫到大段空白。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T07",
+      "category": "transition",
+      "name": "短促甩镜",
+      "primitives": [
+        "Camera2D"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "前构图稳定",
+      "action": "沿明确方向快速移镜，在速度较低处稳定新焦点",
+      "endState": "后构图稳定",
+      "pitfall": "字幕阅读不放在速度峰值段",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T07「短促甩镜」。起态：前构图稳定。动作：沿明确方向快速移镜，在速度较低处稳定新焦点。终态：后构图稳定。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：字幕阅读不放在速度峰值段。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "T08",
+      "category": "transition",
+      "name": "折叠换面",
+      "primitives": [
+        "Motion",
+        "ClipReveal"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "平面内容",
+      "action": "旧内容收成窄面，换面后展开新内容",
+      "endState": "另一面内容",
+      "pitfall": "复杂透视与遮挡需额外3D或分层实现",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T08「折叠换面」。起态：平面内容。动作：旧内容收成窄面，换面后展开新内容。终态：另一面内容。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：复杂透视与遮挡需额外3D或分层实现。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。",
+      "currentPolicy": "disabled-synthetic-or-css-depth-route"
+    },
+    {
+      "id": "T09",
+      "category": "transition",
+      "name": "文字接成图形",
+      "primitives": [
+        "TextSplit",
+        "ShapeMorph"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "可辨认的文字",
+      "action": "用文字的一笔或轮廓承接下一图形",
+      "endState": "有相似锚点的新图形",
+      "pitfall": "字形不兼容时不能声称真实路径变形",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T09「文字接成图形」。起态：可辨认的文字。动作：用文字的一笔或轮廓承接下一图形。终态：有相似锚点的新图形。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：字形不兼容时不能声称真实路径变形。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "T10",
+      "category": "transition",
+      "name": "对象扩成视窗",
+      "primitives": [
+        "ShapeMorph",
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "小对象与锚点",
+      "action": "点击或焦点对象扩成窗口，窗口内内容显现",
+      "endState": "扩展视窗",
+      "pitfall": "保持锚点连续，勿瞬移到中心再展开",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 T10「对象扩成视窗」。起态：小对象与锚点。动作：点击或焦点对象扩成窗口，窗口内内容显现。终态：扩展视窗。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：保持锚点连续，勿瞬移到中心再展开。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "X01",
+      "category": "type",
+      "name": "逐字错峰入场",
+      "primitives": [
+        "TextSplit"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "文字隐藏",
+      "action": "按阅读顺序轻错峰出现，末端收为可读整句",
+      "endState": "整句稳定",
+      "pitfall": "错峰不能让阅读拖到下个段落",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X01「逐字错峰入场」。起态：文字隐藏。动作：按阅读顺序轻错峰出现，末端收为可读整句。终态：整句稳定。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：错峰不能让阅读拖到下个段落。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "X02",
+      "category": "type",
+      "name": "按词分组出现",
+      "primitives": [
+        "TextSplit"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "完整文案已知",
+      "action": "意义相连的词组共同出现，组间轻错峰",
+      "endState": "整句可读",
+      "pitfall": "中文按语义组或标点切分",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X02「按词分组出现」。起态：完整文案已知。动作：意义相连的词组共同出现，组间轻错峰。终态：整句可读。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：中文按语义组或标点切分。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "X03",
+      "category": "type",
+      "name": "标题遮罩揭示",
+      "primitives": [
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "标题隐藏",
+      "action": "文字固定，由遮罩揭示整行",
+      "endState": "标题完整",
+      "pitfall": "不要把同一标题做成多套无关入场",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X03「标题遮罩揭示」。起态：标题隐藏。动作：文字固定，由遮罩揭示整行。终态：标题完整。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不要把同一标题做成多套无关入场。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "X04",
+      "category": "type",
+      "name": "打字与光标",
+      "primitives": [
+        "TextSplit"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "空文本区",
+      "action": "按字符或语义组显示，光标随当前行移动",
+      "endState": "完整句子",
+      "pitfall": "计时以真实字符数量决定",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X04「打字与光标」。起态：空文本区。动作：按字符或语义组显示，光标随当前行移动。终态：完整句子。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：计时以真实字符数量决定。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "X05",
+      "category": "type",
+      "name": "数字滚动落定",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "真实起始值",
+      "action": "数字变化与数据图形进度同步，终值准确",
+      "endState": "真实最终值",
+      "pitfall": "不能为了动画杜撰数值",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X05「数字滚动落定」。起态：真实起始值。动作：数字变化与数据图形进度同步，终值准确。终态：真实最终值。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能为了动画杜撰数值。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "X06",
+      "category": "type",
+      "name": "字母弧线重组",
+      "primitives": [
+        "TextSplit",
+        "PathMove"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "分散但可追踪的字母",
+      "action": "字母从弧线或倾斜状态归入可读排版",
+      "endState": "完整单词",
+      "pitfall": "中文字形通常保持完整",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X06「字母弧线重组」。起态：分散但可追踪的字母。动作：字母从弧线或倾斜状态归入可读排版。终态：完整单词。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：中文字形通常保持完整。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "X07",
+      "category": "type",
+      "name": "散字汇成整句",
+      "primitives": [
+        "TextSplit",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "来源清楚的分散文字",
+      "action": "少量关键字重组为完整表达",
+      "endState": "可读整句",
+      "pitfall": "散开状态不宜长时间占据阅读段",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X07「散字汇成整句」。起态：来源清楚的分散文字。动作：少量关键字重组为完整表达。终态：可读整句。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：散开状态不宜长时间占据阅读段。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "X08",
+      "category": "type",
+      "name": "下划线强调",
+      "primitives": [
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        1.0
+      ],
+      "startState": "文字稳定",
+      "action": "正文先可读，强调线后出现",
+      "endState": "强调范围清楚",
+      "pitfall": "线条不可挡住笔画",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 X08「下划线强调」。起态：文字稳定。动作：正文先可读，强调线后出现。终态：强调范围清楚。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：线条不可挡住笔画。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "M01",
+      "category": "micro",
+      "name": "轻浮动",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "主体已到位",
+      "action": "用低幅慢周期位移保持氛围",
+      "endState": "围绕同一锚点循环",
+      "pitfall": "不能代替中段内容设计",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M01「轻浮动」。起态：主体已到位。动作：用低幅慢周期位移保持氛围。终态：围绕同一锚点循环。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能代替中段内容设计。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "M02",
+      "category": "micro",
+      "name": "呼吸变化",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "稳定内容",
+      "action": "小幅光或尺寸变化，保持阅读稳定",
+      "endState": "近似原态的循环",
+      "pitfall": "文字不宜持续明显缩放",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M02「呼吸变化」。起态：稳定内容。动作：小幅光或尺寸变化，保持阅读稳定。终态：近似原态的循环。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：文字不宜持续明显缩放。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "M03",
+      "category": "micro",
+      "name": "高光扫过",
+      "primitives": [
+        "ClipReveal"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "主体清晰",
+      "action": "局部高光沿材质表面扫过",
+      "endState": "高光退出",
+      "pitfall": "不把全画面闪白当高光",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M03「高光扫过」。起态：主体清晰。动作：局部高光沿材质表面扫过。终态：高光退出。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不把全画面闪白当高光。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "M04",
+      "category": "micro",
+      "name": "少量星芒",
+      "primitives": [
+        "Motion",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "主动作已建立",
+      "action": "在关键动作附近短暂出现少量星芒",
+      "endState": "装饰回到隐藏",
+      "pitfall": "装饰不能比主角更亮更大",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M04「少量星芒」。起态：主动作已建立。动作：在关键动作附近短暂出现少量星芒。终态：装饰回到隐藏。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：装饰不能比主角更亮更大。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "M05",
+      "category": "micro",
+      "name": "附件跟随",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "明确的父子对象",
+      "action": "主体先运动，附属元素稍后稳定",
+      "endState": "共同稳定",
+      "pitfall": "滞后按材质与速度调，不固定帧数",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M05「附件跟随」。起态：明确的父子对象。动作：主体先运动，附属元素稍后稳定。终态：共同稳定。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：滞后按材质与速度调，不固定帧数。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "M06",
+      "category": "micro",
+      "name": "按压回应",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "可操作对象",
+      "action": "接触时轻压，释放时平稳恢复",
+      "endState": "原始比例",
+      "pitfall": "离线视频只能模拟交互，不能宣称已支持实时打断",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M06「按压回应」。起态：可操作对象。动作：接触时轻压，释放时平稳恢复。终态：原始比例。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：离线视频只能模拟交互，不能宣称已支持实时打断。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "M07",
+      "category": "micro",
+      "name": "短暂运动拖尾",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "真实主体位置",
+      "action": "高速阶段保留少量衰减残像，低速时消失",
+      "endState": "仅主体可见",
+      "pitfall": "不能把副本残留为鬼影",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M07「短暂运动拖尾」。起态：真实主体位置。动作：高速阶段保留少量衰减残像，低速时消失。终态：仅主体可见。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能把副本残留为鬼影。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "M08",
+      "category": "micro",
+      "name": "材质轻流动",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "spec-only",
+      "durationSeconds": [
+        0.5,
+        2.5
+      ],
+      "startState": "阅读内容稳定",
+      "action": "只让背景材质发生低强度变化",
+      "endState": "稳定氛围",
+      "pitfall": "纹理闪烁会抬高像素差但不代表质量",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 M08「材质轻流动」。起态：阅读内容稳定。动作：只让背景材质发生低强度变化。终态：稳定氛围。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：纹理闪烁会抬高像素差但不代表质量。",
+      "implementationNote": "需要额外的曲线、布局、绘制或专用实现；所列基础组件只是搭建线索。"
+    },
+    {
+      "id": "O01",
+      "category": "exit",
+      "name": "沿入场路径收回",
+      "primitives": [
+        "Motion"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "终态构图",
+      "action": "保持身份，沿相关路径回到来源或隐藏",
+      "endState": "恢复下层画面",
+      "pitfall": "退出方向要和来源关系相符",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 O01「沿入场路径收回」。起态：终态构图。动作：保持身份，沿相关路径回到来源或隐藏。终态：恢复下层画面。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：退出方向要和来源关系相符。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "O02",
+      "category": "exit",
+      "name": "沿动作方向离场",
+      "primitives": [
+        "PathMove"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "完整主体",
+      "action": "沿已建立的方向离开取景，必要时降alpha",
+      "endState": "取景内没有残留",
+      "pitfall": "出画坐标需按真实包围盒计算",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 O02「沿动作方向离场」。起态：完整主体。动作：沿已建立的方向离开取景，必要时降alpha。终态：取景内没有残留。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：出画坐标需按真实包围盒计算。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "O03",
+      "category": "exit",
+      "name": "遮罩关闭",
+      "primitives": [
+        "ClipReveal"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "主体完整",
+      "action": "用与揭示对应的遮罩逐渐收回可见区域",
+      "endState": "主体完全隐藏",
+      "pitfall": "不能烘焙遮罩背景进入透明素材",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 O03「遮罩关闭」。起态：主体完整。动作：用与揭示对应的遮罩逐渐收回可见区域。终态：主体完全隐藏。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不能烘焙遮罩背景进入透明素材。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "O04",
+      "category": "exit",
+      "name": "收紧成图标",
+      "primitives": [
+        "ShapeMorph"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "完整容器与内容",
+      "action": "多余内容退让，保留识别对象并收紧",
+      "endState": "小型识别对象",
+      "pitfall": "文字先退出，避免缩成难读噪点",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 O04「收紧成图标」。起态：完整容器与内容。动作：多余内容退让，保留识别对象并收紧。终态：小型识别对象。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：文字先退出，避免缩成难读噪点。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "O05",
+      "category": "exit",
+      "name": "轻散开淡出",
+      "primitives": [
+        "Motion",
+        "Stagger"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "稳定群体",
+      "action": "各对象短距离分离并退出",
+      "endState": "干净的空画布",
+      "pitfall": "不要用大幅随机爆炸破坏平静风格",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 O05「轻散开淡出」。起态：稳定群体。动作：各对象短距离分离并退出。终态：干净的空画布。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：不要用大幅随机爆炸破坏平静风格。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    },
+    {
+      "id": "O06",
+      "category": "exit",
+      "name": "首尾循环接回",
+      "primitives": [
+        "Motion",
+        "Camera2D"
+      ],
+      "implementation": "compose-with-primitives",
+      "durationSeconds": [
+        0.3,
+        0.8
+      ],
+      "startState": "明确起态",
+      "action": "让末端位置、速度与外观接回起点",
+      "endState": "与起态兼容",
+      "pitfall": "只对齐位置而忽略速度会在循环处顿一下",
+      "handoff": [
+        "anchor",
+        "bounds",
+        "visibility",
+        "screenVelocity"
+      ],
+      "prompt": "使用 O06「首尾循环接回」。起态：明确起态。动作：让末端位置、速度与外观接回起点。终态：与起态兼容。主体、终点与时长服从当前方案；先做中性背景小样，再检验与前后段的锚点、边界、速度和透明度。注意事项：只对齐位置而忽略速度会在循环处顿一下。",
+      "implementationNote": "使用所列基础组件组合，并自行绑定素材、坐标和时间；不等同于完整预设。"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "R01",
+      "name": "单主体清楚展示",
+      "minAssets": 1,
+      "maxAssets": 1,
+      "actions": [
+        "E04",
+        "F05",
+        "O01"
+      ],
+      "plan": "揭示主体 → 显示一个确有价值的细节或标注 → 收回。缺少细节素材时用原图局部，不补造内容。"
+    },
+    {
+      "id": "R02",
+      "name": "多图展开与揭示",
+      "minAssets": 4,
+      "maxAssets": 8,
+      "actions": [
+        "E03",
+        "L01",
+        "F08",
+        "L06",
+        "O02"
+      ],
+      "plan": "叠放建立数量 → 展成清楚布局 → 按阅读顺序交接焦点 → 收拢或沿原方向退出。"
+    },
+    {
+      "id": "R03",
+      "name": "二至三对象并列集结",
+      "minAssets": 2,
+      "maxAssets": 3,
+      "actions": [
+        "E05",
+        "L08",
+        "F08",
+        "O05"
+      ],
+      "plan": "错峰抵达共同布局 → 逐个短暂介绍并交还同等分量 → 回到并列 → 干净退出。轮换不表示排名。"
+    },
+    {
+      "id": "R04",
+      "name": "较多素材分组展示",
+      "minAssets": 9,
+      "maxAssets": 999,
+      "actions": [
+        "E04",
+        "L01",
+        "L04",
+        "O03"
+      ],
+      "plan": "按用户顺序分组 → 保持同一布局规则换组 → 汇总或收回。素材多而时长短时明确密度限制，不静默遗漏。"
+    },
+    {
+      "id": "R05",
+      "name": "从群体中揭示主角",
+      "minAssets": 2,
+      "maxAssets": 8,
+      "actions": [
+        "E03",
+        "L01",
+        "L10",
+        "F01",
+        "O04"
+      ],
+      "plan": "先明确群体 → 其他元素让位或抽离 → 目标对象成为主角 → 收紧识别。只在用户有主角意图时使用。"
+    },
+    {
+      "id": "R06",
+      "name": "真实数据排名变化",
+      "minAssets": 0,
+      "maxAssets": 999,
+      "actions": [
+        "E04",
+        "L05",
+        "X05",
+        "F06",
+        "O03"
+      ],
+      "plan": "建立标签与数据绑定 → 数字、条长与位次同步变化 → 终值停留 → 收回；缺少数据时列出待填字段，禁止编造。"
+    },
+    {
+      "id": "R07",
+      "name": "数字与证据说明",
+      "minAssets": 0,
+      "maxAssets": 999,
+      "actions": [
+        "X03",
+        "X05",
+        "F06",
+        "O03"
+      ],
+      "plan": "提出真实数值或结论 → 展示相应证据 → 标注重点 → 留阅读时间。证据缺失就标待补。"
+    },
+    {
+      "id": "R08",
+      "name": "文字与图形接龙",
+      "minAssets": 0,
+      "maxAssets": 999,
+      "actions": [
+        "X01",
+        "T09",
+        "T01",
+        "X03",
+        "O04"
+      ],
+      "plan": "关键字出现 → 一处轮廓接到图形 → 新构图建立 → 回到可读标题。路径不兼容时用遮罩替代真实变形。"
+    },
+    {
+      "id": "R09",
+      "name": "大世界连续讲解",
+      "minAssets": 0,
+      "maxAssets": 999,
+      "actions": [
+        "E04",
+        "T06",
+        "L09",
+        "F06",
+        "O06"
+      ],
+      "plan": "同一世界布置内容站点 → 停站或跟拍表达 → 沿空间关系接到下一站 → 汇总或回起点。"
+    },
+    {
+      "id": "R10",
+      "name": "透明剪辑转场",
+      "minAssets": 0,
+      "maxAssets": 999,
+      "actions": [
+        "T05",
+        "T04",
+        "O03"
+      ],
+      "plan": "透明起始 → 前景扫过并完全遮挡切点 → 继续运动退出 → 完全透明；不保留底板。"
+    },
+    {
+      "id": "R11",
+      "name": "图标对象状态与容器衔接",
+      "minAssets": 1,
+      "maxAssets": 999,
+      "actions": [
+        "E03",
+        "L08",
+        "F08",
+        "T01",
+        "O04"
+      ],
+      "plan": "建立可识别的图标初态 → 围绕同一触发展开、切换或交接焦点 → 稳定呈现整体或回收容器。按对象关系分组；环形只是可选布局，不能代替状态逻辑。"
+    },
+    {
+      "id": "R12",
+      "name": "低干扰氛围循环",
+      "minAssets": 1,
+      "maxAssets": 999,
+      "actions": [
+        "M01",
+        "M02",
+        "O06"
+      ],
+      "plan": "循环成片从首帧已清楚的主体开始 → 低幅周期变化 → 位置、尺度、alpha与速度接回首态。需要揭示入场时将它另放循环段之外。"
+    }
+  ]
+}
