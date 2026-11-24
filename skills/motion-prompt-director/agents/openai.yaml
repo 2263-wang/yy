@@ -1,4 +1,4 @@
 interface:
   display_name: "动效提示词导演"
-  short_description: "设计更有个性的二维动画，融合DrawAI配方、可复用工程、预览与导出"
-  default_prompt: "请用 $motion-prompt-director，根据项目内容设计有具体态度和对象行为的二维动画，适合时用DrawAI配方与可复用工程制作并验证；默认仅Logo字标、无配音，必要文字和其他例外按本次明确要求处理。"
+  short_description: "设计更有个性的二维动画，学习构图与运动曲线，按项目组织制作和交付"
+  default_prompt: "请用 $motion-prompt-director，根据项目内容设计二维动画，重视画面构图、运动曲线与对象行为，使用当前环境中合适的工具制作并验证；默认仅Logo字标、无配音，必要文字和其他例外按本次明确要求处理。"

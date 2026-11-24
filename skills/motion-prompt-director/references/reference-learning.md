@@ -4,7 +4,7 @@
 
 ## 当前表达参考过滤
 
-原创表达检索限定二维MG、图片蒙太奇、平面Logo／产品图交接、剪纸拼贴与大画布二维取景。当前关闭以三维机身、金属打光、悬浮转台、环绕镜头或CSS透视开合为主体的参考。不是换成HF／CSS就可绕过。
+原创表达检索限定二维动画、图片蒙太奇、平面Logo／产品图交接、剪纸拼贴与大画布二维取景。当前关闭以三维机身、金属打光、悬浮转台、环绕镜头或CSS透视开合为主体的参考。不是换成HF／CSS就可绕过。
 
 主题词与表现形式一起搜，例如“iPhone Duo 二维 产品图片 快切 MG 转场”“product photo montage 2D flat motion design match cut -3D -CGI”。排除词只是初筛；实际画面以立体展示为主就不纳入当前候选，继续找平面方法。若同一作品存在可单独迁移的平面段落，记录实际观察的段落和方法，不把整支三维片当当前风格目标。
 
@@ -22,11 +22,11 @@
 
 主题、表达态度与动作机制可以并行检索。同题作品不是唯一入口；降低过度正式感时，可从独立动画、音乐影像、漫画分格、杂志拼贴或日常物体运动学习迟疑、打断、重复、材料关系和观看预期。仍需观察真实片段并说明如何迁移到当前内容；不能只贴“手作／实验／去AI味”标签。
 
-已有明确参考风格或匹配的 DrawAI 镜头卡时，可读取配方／源码并观察参考，先移植关键动作做小样；不强制再做一轮全面检索。来源缺少动态画面时如实标范围，用自己的小样检验时序，不把代码阅读说成看片。
+已有明确参考风格或相关动作示例时，可读取示例源码并观察参考，先移植关键动作做小样；不强制再做一轮全面检索。来源缺少动态画面时如实标范围，用自己的小样检验时序，不把代码阅读说成看片。
 
 需要理解题目如何被组织时，可搜与主题相关的动画、动态信息图或作者拆解，不只搜资料。例如本题是AI产业链，可尝试：
 
-- AI产业链 二维MG／平面动态图谱 案例；AI supply chain flat 2D explainer animation。
+- AI产业链 二维动画／平面动态图谱 案例；AI supply chain flat 2D explainer animation。
 - 同题结果稀少、质量不足或只有课件时，扩展：半导体供应链 平面动画、manufacturing supply chain flat motion design、complex system 2D explainer。
 - 发现具体缺口后再搜：大画布关系图 运镜、animated diagram overview detail、assembly continuity、signal flow cause response。
 
@@ -59,7 +59,7 @@
 
 [Apple · Designing Fluid Interfaces](https://developer.apple.com/videos/play/wwdc2018/803/)与[Material · Choreography](https://m1.material.io/motion/choreography.html)可帮助研究对象连续性与焦点衔接，不能包办所有主题的整段组织。本包此前依据是官方文字材料，不声称重新观看过完整视频；交互参数不升级为预渲染动画通用阈值。
 
-用户给过的产业图谱参考不随包分发。[旧图谱粗动稿](diagram-narrative.md)含说明文字，仅作技术参考；[无文字MG粗动稿](nontext-mg.md)为自制局部练习。新题仍需有针对性研究，不把少量内置示例作为方法边界。
+用户给过的产业图谱参考不随包分发。[旧图谱粗动稿](diagram-narrative.md)含说明文字，仅作技术参考；[无说明文字动画粗动稿](nontext-mg.md)为自制局部练习。新题仍需有针对性研究，不把少量内置示例作为方法边界。
 
 ## 已整理的产品片与抽象广告
 

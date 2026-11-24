@@ -1,26 +1,51 @@
-# 交给其他AI使用
+# 跨平台安装与使用
 
-交付整个motion-prompt-director文件夹，入口为SKILL.md。放到目标软件支持的技能目录；不能自动加载时直接让AI读取入口与相关引用。不能只发入口而遗漏资源。调用名仍是motion-prompt-director，visual-richness-20261104只是revision，不当成新技能跨目录搜。
+本 Skill 的入口是 `SKILL.md`，创作流程和参考文档可由 Codex、WorkBuddy、DSH（DeepSeek Harness）等支持技能文件的 AI 工具读取。交付整个 `motion-prompt-director` 文件夹，保留脚本、参考文档与素材的相对位置。技能名称始终是 `motion-prompt-director`，版本标记以入口的 `metadata.revision` 为准。
 
-可附启动指令：
+## 安装入口
 
-> 使用motion-prompt-director（revision: visual-richness-20261104）。按我的文案与规格，主动研究本题二维MG／图片蒙太奇表达，同题不足时扩展相近结构案例；不要只搜资料图片。在内容约束下展开、组合和比较表达方法；选定方向后继续设计片内的可见事件、素材、表示形式与尺度／密度变化，保持视觉风格和主体可追踪。用覆盖主要段落的真实构图／粗动稿筛选，再按方案选择合适工具。当前关闭三维／CSS立体模拟，允许有内容与节奏的产品图片快切；默认仅Logo原生字标，用户明确要求时仅例外产品名，不加其他画面文字、不朗读／配音／TTS计时、不做PPT式巡览。能判断就自主完成，确实无法取舍再带有效候选让我选。用户已定方案或局部修改时保留范围。
+| 工具 | 如何放置或导入 |
+| --- | --- |
+| Codex | 将完整文件夹放到本机技能目录；本环境使用 `~/.codex/skills/motion-prompt-director/`。设置了 `CODEX_HOME` 时检查其 `skills/` 目录。 |
+| WorkBuddy | 在“专家·技能·连接器 → 技能 → 添加技能 → 上传技能”导入本地完整技能包。自定义包使用上传入口，不假定技能市场的对话安装能安装任意 GitHub 仓库。 |
+| DSH / DeepSeek Harness | 可将完整文件夹放在项目的 `.dsh/skills/motion-prompt-director/` 下；`SKILL.md` 应直接位于该技能文件夹内，避免多套一层仓库目录。也可使用该环境配置的其他技能目录。 |
+| 其他 AI 工具 | 使用其支持的技能导入方式；支持文件读取但没有技能加载入口时，可明确要求读取 `SKILL.md` 及相关引用，但不等同于完成原生技能安装。 |
 
-## 新的探索入口
+WorkBuddy 与 DSH 的入口按 2026-11-24 的官方文档核对：[WorkBuddy 技能](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)、[DeepSeek Harness 技能机制](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/skills.md)。界面与目录配置以用户安装版本为准。本 Skill 尚未在这两个应用中完成端到端制作验证；可导入文件不代表各工具拥有相同的搜索、渲染或导出能力。
+
+`agents/openai.yaml` 仅提供 Codex 的列表显示和调用提示，不是创作流程入口。其他工具读取 `SKILL.md` 和引用资源即可，不必理解这份平台专用配置。
+
+## 开始使用
+
+可在目标 AI 工具里说：
+
+> 使用 motion-prompt-director，根据我的内容制作二维动画。先理解画面要表达什么，再设计构图、对象行为、运动曲线和段落衔接，选择当前环境中可用的工具实现。保留本次规格和已定方案；默认内容边界按 SKILL.md，明确要求的界面文字、图表、产品名称或其他内容按对应范围处理。
+
+Codex 中也可用 `$motion-prompt-director` 指定技能。其他工具的快捷调用语法以其自身说明为准。
+
+仅要方案时输出设计；要求制作时推进到约定的源工程、预览与输出。缺少特定工具时检查已有替代，说明实际限制，不把某个参考项目自动变成安装前提。
+
+## 设计资源与制作环境
+
+- [画面设计与运动曲线](design-and-motion-curves.md)：构图、色彩、留白、裁切、动作分段与曲线量测。
+- [表达个性](expressive-direction.md)与[片内丰富度](visual-richness.md)：对象行为、材料变化与段落发展。
+- [制作方法](production-method.md)与[工具选择](tool-selection.md)：根据现有工程和交付需求落地。
+- `scripts/` 中的 `.mjs` 检索与检查脚本使用 Node.js；没有 Node.js 时，仍可阅读设计方法，按需选择是否运行脚本。
+- 包内的代码示例按各自说明使用相应依赖；Skill 不自带通用视频渲染器，也不保证目标环境已安装示例所用工具。现有 Remotion 示例不等于可直接在其他引擎运行。
+
+需要组合检索时，可在技能目录运行：
 
 ```text
 node scripts/explore-directions.mjs --topic=AI产业链 --relations=dependency,part-whole --purpose=opening --duration=8 --mode=insert
 ```
 
-命令输出未验证种子、兼容性与待执行检索计划，不理解自由文案、不联网、不选首项、不自动选工具、不生成视频。需实际搜索／观察、映射对象、剪枝和验证。方法库开放，可通过JSON补充声明rendering=flat-2d的新方法；未分类／三维会被排除；细则见[组合探索](exploration-method.md)。没有Node时按同样原则执行，不把缺少脚本当不能设计。
+它输出待筛选的方案起点与待执行的研究计划，不自动上网、挑选最终方案或生成视频。使用范围与文字选项见[组合探索](exploration-method.md)，当前任务的内容范围仍以 `SKILL.md` 为准。
 
-旧select-language.mjs用于检索分类，select-motion.mjs仅作已选方向的局部配方／示意时窗，不作为完整导演入口。最终少量候选不限制内部探索广度。记录用[模板](../assets/templates/direction-record.md)，工具选择读[工具选择](tool-selection.md)，用户指定工具优先。包内不随附Remotion／HF运行时，不承诺目标环境已安装。
+## 验证范围
 
-需要提高片内丰富度时，读取[方法](visual-richness.md)和[完整案例](richness-cases.md)。检索器的primary及单个组合种子不锁定整片表达；素材状态、主体内层变化与段落差异需映射到真实画面。案例含成片观察与未渲染的原创推演，区分验证范围。Kimi关键画面联系图可选，原视频不是运行依赖。
+本包已经在 Codex 环境中使用，并检查过技能结构、引用、检索器与相关示例；具体影片和研究案例保留各自的验证记录。它们不证明所有风格、全部输出格式或其他 AI 工具的实际效果。
 
-[无文字MG实例](nontext-mg.md)可研究局部对象关系；旧图谱／8组件演示含说明文字，不当当前默认模板。已有代码是Remotion示例，不声称它们在HF直接可运行。使用相应工具的现有依赖和版本，不要求另一个AI存在本机技能路径。
-
-## 检查与真实试用
+需要检查包内资源与脚本时，按相关改动运行：
 
 ```text
 node scripts/verify-library.mjs
@@ -30,10 +55,4 @@ node scripts/verify-exploration.mjs
 node scripts/verify-flat-policy.mjs
 ```
 
-各脚本只覆盖资源引用、路由、默认文字／声音政策、组合状态与可扩充性；不证明事实、美感、网页真被观察或执行者实际照做。text=explicit只能来自当前用户明确要求文字，不能自行启用；不会自动启用配音。
-
-[行为测试](behavior-tests.md)在隔离项目执行，不把预期方案或其他AI本题方案喂给执行者。审查真实查询、观察与迁移、不同组织方法、选择证据、工具理由和最终画面。未经用户授权不自动向外部AI发送任务或启动收费任务。
-
-技能能提供方法和可检查产物，不能从外部强制第三方AI行为；不要凭“已调用skill”判通过。
-
-产品名称单独例外：用户当前明确要求时，探索器可传--text=product-name，只允许相应真实名称；不解锁文字配方、说明字幕、三维、配音或TTS。工具和脚本不能自行赋予授权。
+脚本只验证各自覆盖的结构与行为，不能代替画面观察、内容事实和正常速度回看。另见[行为测试](behavior-tests.md)。不要凭“已加载 Skill”声称动画或平台兼容性已经通过验证。
